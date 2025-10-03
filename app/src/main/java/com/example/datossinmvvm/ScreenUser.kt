@@ -143,7 +143,6 @@ suspend fun getUsers(dao: UserDao): String {
     }
     return rpta
 }
-
 suspend fun AgregarUsuario(user: User, dao: UserDao) {
     try {
         dao.insert(user)
