@@ -1,6 +1,7 @@
 package com.example.datossinmvvm
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -15,4 +16,7 @@ interface UserDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(user: User)
+
+    @Query("DELETE FROM User WHERE uid = :id")
+    suspend fun deleteById(id: Int)
 }
